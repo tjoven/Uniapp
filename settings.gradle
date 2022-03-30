@@ -1,3 +1,4 @@
 
 rootProject.name = "UniApp"
 include ':app'
+include ':TestModule'

@@ -7,6 +7,7 @@ import io.dcloud.feature.sdk.DCUniMPSDK;
 import io.dcloud.feature.sdk.Interface.IDCUniMPPreInitCallback;
 import io.dcloud.feature.sdk.Interface.IMenuButtonClickCallBack;
 import io.dcloud.feature.sdk.Interface.IUniMP;
+import io.dcloud.feature.sdk.Interface.IUniMPOnCloseCallBack;
 import io.dcloud.feature.sdk.MenuActionSheetItem;
 
 import android.os.Bundle;
@@ -30,11 +31,12 @@ public class MainActivity extends AppCompatActivity {
         List<MenuActionSheetItem> sheetItems = new ArrayList<>();
         sheetItems.add(item);
         DCSDKInitConfig config = new DCSDKInitConfig.Builder()
-                .setCapsule(true)
+                .setCapsule(false)//隐藏胶囊按钮
                 .setMenuDefFontSize("16px")
                 .setMenuDefFontColor("#ff00ff")
                 .setMenuDefFontWeight("normal")
                 .setMenuActionSheetItems(sheetItems)
+                .setEnableBackground(false)//去除多任务窗口
                 .build();
 
         DCUniMPSDK.getInstance().initialize(this, config, new IDCUniMPPreInitCallback() {
@@ -52,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG,appid+"用户点击了关于");
                     }
                 }
+            }
+        });
+
+        DCUniMPSDK.getInstance().setUniMPOnCloseCallBack(new IUniMPOnCloseCallBack() {
+            @Override
+            public void onClose(String appid) {
+                Log.d(TAG, appid+"被关闭了");
             }
         });
 
