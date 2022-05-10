@@ -15,7 +15,9 @@ public class TestModule extends UniModule {
 
     @UniJSMethod(uiThread = true)
     public void testAsyncFunc(JSONObject options, UniJSCallback callback) {
-        Log.e(TAG, "testAsyncFunc--"+options);
+
+        Log.e(TAG, "testAsyncFunc--"+options+" Process:"+ Process.class.getName());
+        Log.e(TAG, "testAsyncFunc--"+options+" ThreadName:"+Thread.currentThread().getName());
         if(callback != null) {
 
             JSONObject data = new JSONObject();
@@ -27,7 +29,7 @@ public class TestModule extends UniModule {
     //run JS thread
     @UniJSMethod (uiThread = false)
     public JSONObject testSyncFunc(){
-        Log.e(TAG, "testSyncFunc--");
+        Log.e(TAG, "testSyncFunc-- ThreadName:"+Thread.currentThread().getName());
         JSONObject data = new JSONObject();
         data.put("code", "success");
         return data;

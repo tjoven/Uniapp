@@ -1,7 +1,7 @@
 package com.example.uniapp;
 
 import android.app.Application;
-import com.example.testmodule.TestModule;
+//import com.example.testmodule.TestModule;
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.common.WXException;
 
@@ -10,7 +10,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         try {
-            WXSDKEngine.registerModule("TestModule", TestModule.class);
+//            WXSDKEngine.registerModule("TestModule", TestModule.class);
 //            WXSDKEngine.registerComponent("myText", TestText.class);
         } catch (Exception e) {
             e.printStackTrace();

@@ -9,7 +9,7 @@ def mfph = [
 android {
     compileSdkVersion 31
 
-    ndkVersion "16.1.4479499"
+    ndkVersion "22.1.7171670"
 
     defaultConfig {
         applicationId "com.example.uniapp"
@@ -81,5 +81,5 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.android.support:multidex:1.0.3'
 
-    implementation project(':TestModule')
+//    implementation project(':TestModule')
 }

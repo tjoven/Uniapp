@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void test(View view) {
         try {
-            IUniMP uniMP = DCUniMPSDK.getInstance().openUniMP(MainActivity.this,"__UNI__E0CBE50");
+            IUniMP uniMP = DCUniMPSDK.getInstance().openUniMP(MainActivity.this,"__UNI__CE7D611");
 
 //            IUniMP uniMP = DCUniMPSDK.getInstance().openUniMP(MainActivity.this,"__UNI__4138A06");
             //            mUniMPCaches.put(uniMP.getAppid(), uniMP);
